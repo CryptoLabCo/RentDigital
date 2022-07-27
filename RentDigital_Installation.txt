@@ -103,6 +103,27 @@ REACT_APP_MOCH_USDT_SMART_CONTRACT_ADDR=0x8464135c8F25Da09e49BC8782676a84730C318
 cd frontend
 npm run start
 
+///////////////////////////////////////////////////////////////////////////////////
+// Steps to deploy dApp to Netlify.com
+///////////////////////////////////////////////////////////////////////////////////
 // Build App for Deploying to Web Hosting Company
+
+In VS Terminal
 cd frontend
 npm run build
+
+//Go to Netlify.com and sign-up or log-in
+
+// Click Sites navigation item
+
+// Select Create New Site --> Deploy Manually
+
+// Drag the newly created Build folder in your project from windows explorer to the Drag & Drop area on the Netlify.com site 
+
+// Let it build and then go to the Site Settings and change the generic name to something you like
+
+// Click on the new website link and it starts the dApp.
+
+
+
+
