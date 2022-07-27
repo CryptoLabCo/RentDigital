@@ -1,0 +1,75 @@
+///////////////////////////////////////////////////////////////////////////////////
+// Steps to start dApp from localhost
+///////////////////////////////////////////////////////////////////////////////////
+//Start the Hardhat node
+npx hardhat node
+
+// Deploy the contracts
+npx hardhat run --network localhost scripts/1_deploy_constracts_test.js
+ 
+// Copy the output into the deploy script for future reference
+
+/*
+RDAsset deployed to: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 by 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Tether deployed to: 0x8464135c8F25Da09e49BC8782676a84730C318bC by 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+*/
+
+// Open Metamask and setup or open the Hardhat Localhost: http://127.0.0.1:8545/
+// This is the address in the npx hardhat node window
+
+// Import the singers in metamask by taking output from the deploy script and get the private keys from the npx hardhat node terminal window
+
+// Import tokens into metamask the same way
+
+// Open Metamask, click settings -> advanced -> Reset Account
+// This reset the network nouance number so wierd things don't happen
+
+// Start React website
+cd frontend
+npm run start
+
+///////////////////////////////////////////////////////////////////////////////////
+// Steps to start dApp from Rinkeby Testnet
+///////////////////////////////////////////////////////////////////////////////////
+
+// Run all the smart contract test scripts and make sure they all pass. This also compiles the code
+npx run test
+
+// Copy the RDAsset.json and USDT.json from the artifacts folder
+// Paste then to the frontend -> src folder
+// Rename to RDAsset_abi.json and USDT_abi.json
+
+// Hardhat.config.js
+// Update the URL with your Blockchain EndPoint(i.e. Infura)
+// Update the Accounts with your Private Key from the account you want to use for deploying the smart contracts. Note: This will be the RDAsset smart contract owner address
+
+// Deploy the contracts
+npx hardhat run --network localhost scripts/2_deploy_constracts_testnet.js
+ 
+// Copy the output into the .env file for future reference
+
+// Sampe Output:
+//RDAsset deployed to contract address: 0x33c341aDbE7661Ca0059eBB304761Dd0f377B6cd
+//Moch Tether deployed to contract address: 0xBfD733DAaCE5fC827937D90F6a8d42A289c33Eb9
+
+// Update the frontend --> .env file with the new RDAsset and USDT smart contract addresses
+
+// Open Metamask and setup or open the Rinkeby Testnet
+
+// Import tokens into metamask accounts using the USDT address
+
+// Review the deployment account you used. It should have 2,000,000 Moch USDT tokens
+
+// Send 500,000 USDT to another account: acts as the shareholder
+// Send 100,000 USDT to another account; acts as the renter
+
+// Open Metamask, click settings -> advanced -> Reset Account
+// This reset the network nouance number so wierd things don't happen
+
+// Start React website
+cd frontend
+npm run start
+
+// Build App for Deploying to Web Hosting Company
+cd frontend
+npm run build
